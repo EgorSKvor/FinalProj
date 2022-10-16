@@ -1,0 +1,48 @@
+
+## Входные данные
+string[] arr1 = {"Hello", "2", "world", ":-)"};
+string[] arr2 = {"1234", "1567", "-2", "computer science"};
+string[] arr3 = {"Russia", "Denmark", "Kazan"};
+
+int MaxWordLength = 3;
+string[] GetWordsArray(string[]array)
+{
+    int length = array.Length;
+    string[] result = new string[length];
+    int count = 0;
+    for (int i = 0; i < length; i++)
+    {
+        if (array[i].Length <= MaxWordLength)
+        {
+            result[count] = array[i];
+            count++;
+        }
+    }
+    Array.Resize(ref result, count);
+    return result;
+}
+
+void PrintArray(string[] array)
+{
+    if(array.Length == 0)
+    {
+        System.Console.WriteLine("Array is empty");
+    }
+    else
+    {
+        Array.ForEach(array, (str) => System.Console.WriteLine($"{str}"));
+        System.Console.WriteLine();
+    }
+}
+void PrintTask(string[] array)
+{
+    System.Console.WriteLine("Source array: ");
+    PrintArray(array);
+    string[] shortArray = GetWordsArray(array);
+    System.Console.WriteLine($"Result array (words are less or equal than {MaxWordLength} symbols)");
+    PrintArray(shortArray);
+    System.Console.WriteLine();
+}
+PrintTask(arr1);
+PrintTask(arr2);
+PrintTask(arr3);
