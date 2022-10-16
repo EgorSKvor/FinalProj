@@ -1,10 +1,11 @@
 
-## Входные данные
+# Входные данные
 string[] arr1 = {"Hello", "2", "world", ":-)"};
 string[] arr2 = {"1234", "1567", "-2", "computer science"};
 string[] arr3 = {"Russia", "Denmark", "Kazan"};
-
+### Указываем макс длину элемента 
 int MaxWordLength = 3;
+### Создаем основной метод для проверки длины элемента в массиве, который возваращет полученный массив
 string[] GetWordsArray(string[]array)
 {
     int length = array.Length;
@@ -21,7 +22,7 @@ string[] GetWordsArray(string[]array)
     Array.Resize(ref result, count);
     return result;
 }
-
+### Описываем метод для вывода массива
 void PrintArray(string[] array)
 {
     if(array.Length == 0)
@@ -34,10 +35,13 @@ void PrintArray(string[] array)
         System.Console.WriteLine();
     }
 }
+### Создаем третий метод для красивого вывода какой был входной массив и какой получился
 void PrintTask(string[] array)
 {
     System.Console.WriteLine("Source array: ");
-    PrintArray(array);
+    #### вызываем метод вывода
+    PrintArray(array); 
+    #### записываем в новую переменную основной метод, вызвав его
     string[] shortArray = GetWordsArray(array);
     System.Console.WriteLine($"Result array (words are less or equal than {MaxWordLength} symbols)");
     PrintArray(shortArray);
