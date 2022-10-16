@@ -27,4 +27,18 @@ string[] GetWordsArray(string[]array)
     return result;
 }
 
+{
+
+void PrintArray(string[] array)
+{
+    if(array.Length == 0)
+    {
+        System.Console.WriteLine("Array is empty");
+    }
+    else
+    {
+        Array.ForEach(array, (str) => System.Console.WriteLine($"{str}"));
+        System.Console.WriteLine();
+    }
+}
 
