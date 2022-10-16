@@ -27,8 +27,6 @@ string[] GetWordsArray(string[]array)
     return result;
 }
 
-{
-
 void PrintArray(string[] array)
 {
     if(array.Length == 0)
@@ -41,4 +39,17 @@ void PrintArray(string[] array)
         System.Console.WriteLine();
     }
 }
+void PrintTask(string[] array)
+{
+    System.Console.WriteLine("Source array: ");
+    PrintArray(array);
+    string[] shortArray = GetWordsArray(array);
+    System.Console.WriteLine($"Result array (words are less or equal than {MaxWordLength} symbols)");
+    PrintArray(shortArray);
+    System.Console.WriteLine();
+}
+PrintTask(arr1);
+PrintTask(arr2);
+PrintTask(arr3);
+
 
